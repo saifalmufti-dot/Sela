@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <symbol id="sela-mark" viewBox="0 0 64 64">
+    <!-- Two-tone S link with an ECG pulse line through the middle -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M46 15H29a9.5 9.5 0 0 0 0 19h3" stroke="#0d9488" stroke-width="9"/>
+      <path d="M18 49h17a9.5 9.5 0 0 0 0-19h-3" stroke="#2dd4bf" stroke-width="9"/>
+      <polyline points="8,32 17,32 23,23 30,41 35,32 56,32" stroke="#ffffff" stroke-width="6.5" stroke-linejoin="round"/>
+      <polyline points="8,32 17,32 23,23 30,41 35,32 56,32" stroke="#115e59" stroke-width="3.2" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+  <use href="#sela-mark"/>
+</svg>
