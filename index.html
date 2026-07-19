@@ -87,18 +87,20 @@
             </button>
           </div>
 
+          <div class="composer__attachments" id="attachments" hidden></div>
+
           <div class="composer__divider" role="presentation"></div>
 
           <div class="composer__toolbar">
-            <button class="tool-btn" type="button">
+            <button class="tool-btn" type="button" id="btn-voice">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
                 <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
               </svg>
-              Voice
+              <span id="voice-label">Voice</span>
             </button>
             <span class="composer__sep" role="presentation"></span>
-            <button class="tool-btn" type="button">
+            <button class="tool-btn" type="button" id="btn-scan">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 <path d="M12 9v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -106,12 +108,13 @@
               Scan Barcode
             </button>
             <span class="composer__sep" role="presentation"></span>
-            <button class="tool-btn" type="button">
+            <button class="tool-btn" type="button" id="btn-pdf">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m20.5 12.6-7.8 7.8a5.1 5.1 0 0 1-7.2-7.2l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               Upload PDF
             </button>
+            <input type="file" id="pdf-input" accept="application/pdf,.pdf" multiple hidden />
           </div>
         </form>
       </section>
@@ -285,6 +288,19 @@
         </p>
       </footer>
     </main>
+  </div>
+
+  <!-- ===== Barcode scanner modal ===== -->
+  <div class="scanner" id="scanner" hidden role="dialog" aria-modal="true" aria-labelledby="scanner-title">
+    <div class="scanner__panel">
+      <h2 class="scanner__title" id="scanner-title">Scan a barcode</h2>
+      <div class="scanner__viewport">
+        <video class="scanner__video" id="scanner-video" playsinline muted></video>
+        <div class="scanner__frame" aria-hidden="true"></div>
+      </div>
+      <p class="scanner__status" id="scanner-status">Starting camera…</p>
+      <button class="pill-btn scanner__cancel" type="button" id="scanner-cancel">Cancel</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
